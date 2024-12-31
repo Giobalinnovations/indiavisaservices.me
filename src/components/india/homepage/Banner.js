@@ -1,79 +1,152 @@
 'use client';
-import { useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Banner = () => {
-  const ref = useRef(null);
-
   return (
-    <div className="relative">
-      <div
-        className="relative mt-20 bg-no-repeat bg-cover h-[500px] transition-all duration-500 ease-in-out overflow-hidden"
-        style={{
-          backgroundImage: 'url("/assets/images/india/home/banner.png")',
-          backgroundPosition: 'center',
-        }}
-      >
-        {/* Overlay Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-
-        {/* Decorative Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange/30 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative h-full text-white">
-          <div className="container h-full p-0">
-            <div className="flex flex-col items-center justify-center w-full h-full space-y-8 text-center">
-              <div className="max-w-4xl px-4 md:px-0">
-                <h1 className="mb-6 text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-                  Online Portal for{' '}
-                  <span className="relative">
-                    <span className="relative z-10 text-orange">
-                      Visa Application
-                    </span>
-                    <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange/50 to-primary/50 blur-sm"></span>
-                  </span>{' '}
-                  to India
-                </h1>
-                <p className="max-w-2xl mx-auto text-sm leading-relaxed text-gray-300 md:text-base lg:text-lg">
-                  All foreign nationals entering India are required to possess a
-                  valid international travel document in the form of a national
-                  passport with a valid visa from an Indian Mission/Post or
-                  eVisa.
-                </p>
-              </div>
-
-              {/* Decorative Shapes */}
-              <div className="absolute left-0 w-64 h-64 bg-gradient-to-br from-orange/20 via-primary/10 to-transparent rounded-full blur-3xl -z-10"></div>
-              <div className="absolute right-0 w-64 h-64 bg-gradient-to-bl from-primary/20 via-orange/10 to-transparent rounded-full blur-3xl -z-10"></div>
-            </div>
-          </div>
-        </div>
+    <div className="relative min-h-[600px] mt-16">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/assets/images/india/home/banner.png"
+          alt="Professional Indian Visa Services"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-900/70"></div>
       </div>
 
-      {/* Announcement Bar */}
-      <div className="absolute bottom-0 w-full bg-gradient-to-r from-black/90 via-black/80 to-black/90 backdrop-blur-sm border-t border-white/5">
-        <div className="container py-4">
-          <div className="flex items-center justify-between text-white">
-            <div className="w-full overflow-hidden">
-              <marquee
-                className="text-sm font-medium tracking-wide md:text-base"
-                behavior="scroll"
-                direction="left"
-                scrollamount="5"
+      {/* Content */}
+      <div className="relative container mx-auto px-4 h-full flex items-center">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center px-4 py-2 bg-blue-800/50 border border-blue-700/30 rounded-lg mb-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-blue-400 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+            <span className="text-sm text-blue-100">
+              Trusted Visa Services Provider
+            </span>
+          </div>
+
+          <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6 leading-tight">
+            Professional Indian Visa <br />
+            Processing Services
+          </h1>
+
+          <p className="text-lg text-blue-100 mb-8 leading-relaxed max-w-2xl">
+            Experience excellence in visa processing with our comprehensive
+            services. We ensure a smooth and efficient application process for
+            your Indian visa requirements.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <Link
+              href="/visa/step-one"
+              className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 rounded-lg"
+            >
+              Start Application
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 ml-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <span className="inline-flex items-center">
-                  <span className="w-2 h-2 mr-4 bg-orange rounded-full"></span>
-                  Avail Indian Visa plus services through &quot;Official app
-                  Indian Visa Su-Swagatam&quot; mobile App for 60 countries
-                  <span className="mx-8">•</span>
-                  One stop solution for all Visa related services
-                  <span className="w-2 h-2 ml-4 bg-orange rounded-full"></span>
-                </span>
-              </marquee>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </Link>
+            <Link
+              href="/track-application"
+              className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium text-blue-100 border border-blue-400/30 hover:bg-blue-800/30 transition-colors duration-300 rounded-lg"
+            >
+              Track Status
+            </Link>
+          </div>
+
+          {/* Corporate Trust Indicators */}
+          <div className="grid grid-cols-3 gap-8 pt-8 border-t border-blue-700/30">
+            <div className="flex items-center space-x-3">
+              <div className="p-3 bg-blue-800/50 rounded-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-blue-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div className="text-xl font-semibold text-white">24/7</div>
+                <div className="text-sm text-blue-200">Processing</div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="p-3 bg-blue-800/50 rounded-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-blue-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div className="text-xl font-semibold text-white">100%</div>
+                <div className="text-sm text-blue-200">Secure</div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="p-3 bg-blue-800/50 rounded-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-blue-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div className="text-xl font-semibold text-white">Fast</div>
+                <div className="text-sm text-blue-200">Turnaround</div>
+              </div>
             </div>
           </div>
         </div>
