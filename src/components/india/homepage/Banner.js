@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Banner = () => {
   return (
-    <div className="relative min-h-[600px] mt-16">
+    <div className="relative min-h-[600px] md:min-h-[calc(100vh-5rem)] mt-16">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -14,16 +14,16 @@ const Banner = () => {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-900/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 via-blue-900/90 to-blue-900/80"></div>
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 h-full flex items-center">
+      <div className="relative container mx-auto px-4 md:px-6 py-12 md:py-20 h-full flex items-center">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-800/50 border border-blue-700/30 rounded-lg mb-6">
+          <div className="inline-flex items-center px-3 md:px-4 py-1.5 md:py-2 bg-blue-800/50 border border-blue-700/30 rounded-lg mb-4 md:mb-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-blue-400 mr-2"
+              className="h-4 w-4 md:h-5 md:w-5 text-blue-400 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -35,23 +35,23 @@ const Banner = () => {
                 d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
               />
             </svg>
-            <span className="text-sm text-blue-100">
+            <span className="text-xs md:text-sm text-blue-100">
               Trusted Visa Services Provider
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6 leading-tight">
-            Professional Indian Visa <br />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-4 md:mb-6 leading-tight">
+            Professional Indian Visa <br className="hidden md:block" />
             Processing Services
           </h1>
 
-          <p className="text-lg text-blue-100 mb-8 leading-relaxed max-w-2xl">
+          <p className="text-base md:text-lg text-blue-100 mb-6 md:mb-8 leading-relaxed max-w-2xl">
             Experience excellence in visa processing with our comprehensive
             services. We ensure a smooth and efficient application process for
             your Indian visa requirements.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-12">
             <Link
               href="/visa/step-one"
               className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 rounded-lg"
@@ -81,7 +81,7 @@ const Banner = () => {
           </div>
 
           {/* Corporate Trust Indicators */}
-          <div className="grid grid-cols-3 gap-8 pt-8 border-t border-blue-700/30">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 pt-6 md:pt-8 border-t border-blue-700/30">
             <div className="flex items-center space-x-3">
               <div className="p-3 bg-blue-800/50 rounded-lg">
                 <svg
